@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class CartDetailsRows extends Component {
+class CartDetailsRows extends Component {
   handleChange = (product, event) => {
     this.props.updateQuantity(product, event.target.value);
   };
@@ -48,3 +48,5 @@ export class CartDetailsRows extends Component {
     }
   }
 }
+
+export default CartDetailsRows;
