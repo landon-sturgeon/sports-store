@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ToggleLink from "./ToggleLink";
+import ToggleLink from "../ToggleLink";
 import { Link } from "react-router-dom";
 
-export class CategoryNavigation extends Component {
+class CategoryNavigation extends Component {
   render() {
     return (
       <React.Fragment>
@@ -28,3 +28,5 @@ export class CategoryNavigation extends Component {
     );
   }
 }
+
+export default CategoryNavigation;
