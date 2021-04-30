@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { ValidationError } from "./ValidationError";
-import { GetMessages } from "./ValidationMessages";
+import ValidationError from "./ValidationError";
+import GetMessages from "./ValidationMessages.js";
 
-export class ValidatedForm extends Component {
+class ValidatedForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,3 +77,5 @@ export class ValidatedForm extends Component {
     );
   }
 }
+
+export default ValidatedForm;
