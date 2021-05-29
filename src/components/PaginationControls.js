@@ -1,4 +1,4 @@
-import React, { Componet } from "react";
+import React, { Component } from "react";
 import PaginationButtons from "./PaginationButtons";
 
 class PaginationControls extends Component {

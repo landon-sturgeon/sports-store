@@ -4,21 +4,22 @@ import { Provider } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect,
+  Routes,
+  Navigate,
 } from "react-router-dom";
-import { ShopConnector } from "./connectors/ShopConnector";
+import ShopConnector from "./connectors/ShopConnector";
 import { AuthProviderImpl } from "./auth/AuthProviderImpl";
 
 const Admin = lazy(() => import("./admin/Admin"));
+
 class App extends Component {
   render() {
     return (
       <Provider store={SportsStoreDataStore}>
         <AuthProviderImpl>
           <Router>
-            <Switch>
-              <Route path="/shop" component={ShopConnector} />
+            <Routes>
+              <Route path="/shop" element={ShopConnector} />
               <Route
                 path="/admin"
                 render={(routeProps) => (
@@ -27,8 +28,8 @@ class App extends Component {
                   </Suspense>
                 )}
               />
-              <Redirect to="/shop" />
-            </Switch>
+              <Navigate to="/shop" />
+            </Routes>
           </Router>
         </AuthProviderImpl>
       </Provider>

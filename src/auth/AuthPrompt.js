@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { historyWrapper } from "../components/HistoryWrapper";
 import { authWrapper } from "./AuthWrapper";
-import { ValidatedForm } from "../forms/ValidatedForm";
+import ValidatedForm from "../forms/ValidatedForm";
 
-export const AuthPrompt = withRouter(
+export const AuthPrompt = historyWrapper(
   authWrapper(
     class extends Component {
       constructor(props) {

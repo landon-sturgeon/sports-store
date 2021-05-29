@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { OrdersRow } from "./OrdersRow";
-import { PaginationControls } from "../PaginationControls";
+import PaginationControls from "../components/PaginationControls";
 
 export class OrdersTable extends Component {
   render = () => (

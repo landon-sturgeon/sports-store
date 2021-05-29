@@ -3,8 +3,8 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { GraphQlUrl } from "../data/Urls";
 import { OrdersConnector } from "./OrdersConnector";
-import { Route, Redirect, Switch } from "react-router-dom";
-import { ToggleLink } from "../ToggleLink";
+import { Route, Navigate, Routes } from "react-router-dom";
+import ToggleLink from "../components/ToggleLink";
 import { ConnectedProducts } from "./ProductsConnector";
 import { ProductEditor } from "./ProductEditor";
 import { ProductCreator } from "./ProductCreator";
@@ -49,19 +49,19 @@ export default authWrapper(
                 )}
               </div>
               <div className="col-9 p-2">
-                <Switch>
+                <Routes>
                   {!this.props.isAuthenticated && (
-                    <Route component={AuthPrompt} />
+                    <Route element={AuthPrompt} />
                   )}
-                  <Route path="/admin/orders" component={OrdersConnector} />
+                  <Route path="/admin/orders" element={OrdersConnector} />
                   <Route
                     path="/admin/products/create"
-                    component={ProductCreator}
+                    element={ProductCreator}
                   />
-                  <Route path="/admin/products/:id" component={ProductEditor} />
-                  <Route path="/admin/products" component={ConnectedProducts} />
-                  <Redirect to="/admin/orders" />
-                </Switch>
+                  <Route path="/admin/products/:id" element={ProductEditor} />
+                  <Route path="/admin/products" element={ConnectedProducts} />
+                  <Navigate to="/admin/orders" />
+                </Routes>
               </div>
             </div>
           </div>

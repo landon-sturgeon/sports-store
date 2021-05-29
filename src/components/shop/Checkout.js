@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ValidatedForm } from "../../forms/ValidatedForm";
+import ValidatedForm from "../../forms/ValidatedForm";
 
 class Checkout extends Component {
   constructor(props) {

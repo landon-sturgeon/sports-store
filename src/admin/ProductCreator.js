@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ValidatedForm } from "../forms/ValidatedForm";
+import ValidatedForm from "../forms/ValidatedForm";
 import { Mutation } from "react-apollo";
-import { storeProduct, updateProduct } from "./clientMutations";
+import { storeProduct, updateProduct } from "./clientMutation";
 
 export class ProductCreator extends Component {
   constructor(props) {

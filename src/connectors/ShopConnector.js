@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import * as ShopActions from "../data/ActionCreaters";
-import DataTypes from "../data/Types";
+import { DataTypes } from "../data/Types";
 import Shop from "../components/shop/Shop";
 import * as CartActions from "../data/CartActionCreators";
 import CartDetails from "../components/shop/CartDetail";
-import DataGetter from "../data/DataGetter";
+import { DataGetter } from "../data/DataGetter";
 import Checkout from "../components/shop/Checkout";
 import Thanks from "../components/shop/Thanks";
 
@@ -33,23 +33,23 @@ const ShopConnector = connect(
         case "thanks":
           return wrap(Thanks);
         default:
-          return <Redirect to="/shop/products/all/1" />;
+          return <Navigate to="/shop/products/all/1" />;
       }
     };
 
     render() {
       return (
-        <Switch>
-          <Redirect
+        <Routes>
+          <Navigate
             from="/shop/products/:category"
             to="/shop/products/:category/1"
             exact={true}
           />
-          <Redirect
+          <Navigate
             path={"/shop:section?/:category?/:page?"}
             render={(routeProps) => this.selectComponent(routeProps)}
           />
-        </Switch>
+        </Routes>
       );
     }
     componentDidMount = () => this.props.loadData(DataTypes.CATEGORIES);

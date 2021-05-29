@@ -1,8 +1,8 @@
 import { graphql } from "react-apollo";
 import * as compose from "lodash.flowright";
-import { ProductsTable } from "./ProductsTable";
+import { ProductsTable } from "./ProductsTables";
 import { productsList } from "./clientQueries";
-import { deleteProduct } from "./clientMutations";
+import { deleteProduct } from "./clientMutation";
 
 const vars = {
   page: 1,

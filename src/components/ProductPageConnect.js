@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { setPageSizze, setSortProperty } from "../data/ActionCreators";
+import { historyWrapper } from "./HistoryWrapper";
+import { setPageSize, setSortProperty } from "../data/ActionCreaters";
 
 const mapStateToProps = (dataStore) => dataStore;
 const mapDispatchToProps = { setPageSize, setSortProperty };
@@ -21,6 +21,6 @@ const mergeProps = (dataStore, actionCreators, router) => ({
 });
 
 export const ProductPageConnector = (PageComponent) =>
-  withRouter(
+  historyWrapper(
     connect(mapStateToProps, mapDispatchToProps, mergeProps)(PageComponent)
   );

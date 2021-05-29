@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { PaginationControls } from "../PaginationControls";
+import PaginationControls from "../components/PaginationControls";
 import { ProductsRow } from "./ProductsRow";
 
 export class ProductsTable extends Component {
